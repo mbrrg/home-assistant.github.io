@@ -19,29 +19,12 @@ There is currently support for the following device types within Home Assistant:
 - [Alarm](#alarm)
 - [Binary Sensor](#binary-sensor)
 
-Home Assistant needs to know where to find the SPC Web Gateway API endpoints, to configure this add the following section to your `configuration.yaml` file:
+Home Assistant needs to know where to find the SPC Web Gateway API endpoints, this is configured when you add the integration. The following information needs to be provided:
 
-```yaml
-# Example configuration.yaml entry
-spc:
-  api_url: API_URL
-  ws_url: WS_URL
-```
-
-{% configuration %}
-api_url:
-  description: URL of the SPC Web Gateway command REST API, e.g., `http://<ip>:8088`.
-  required: true
-  type: string
-ws_url:
-  description: URL of the SPC Web Gateway websocket, e.g., `ws://<ip>:8088/ws/spc`.
-  required: true
-  type: string
-{% endconfiguration %}
-
+- URL for the SPC Web Gateway REST API, e.g., `http://<ip>:8088`.
+- URL for the SPC Web Gateway websocket endpoint, e.g., `ws://<ip>:8088/ws/spc`.
 
 ## Alarm
-
 The `spc` alarm control panel platform allows you to control your [Vanderbilt SPC](https://www.spcsupportinfo.com/SPCConnectPro/) alarms.
 
 The `changed_by` attribute enables one to be able to take different actions depending on who armed/disarmed the alarm in [automation](/getting-started/automation/).
